@@ -1,0 +1,56 @@
+# Funcional utilizado. Cambia por LDA , HFS o PBE0
+
+! B3LYP                 
+
+
+# Conjunto de bases triple zeta con funciones de polarizacion
+
+! def2-TZVPP            
+
+
+# Comando para optimizar la geometria de la molecula
+
+! Opt       
+
+# Comando para exigir condiciones mas estrictas en la optimizacion de la geometria    
+
+! TightOpt     
+
+# Comando para exigir condiciones mas estrictas al resolver las ecuaciones autoconsistentes de Kohn-Sham    
+
+! VeryTightSCF          
+
+
+# Calculo analitico de las frecuencias vibracionales una vez terminada la optimizacion de la geometria
+
+! Freq  
+
+# Calculo por diferencias finitas por si las frecuencias no se pueden calcular de manera analitica     
+
+! NumFreq               
+
+
+%scf
+   MaxIter 400          # Máximo de iteraciones permitidas para el SCF
+end
+
+
+%geom
+   # RMS del desplazamiento debe ser menor que este valor para converger.
+   TolRMSD 1.0e-5  
+   # Desplazamiento maximo permitido para cualquier atomo.     
+   TolMAXD 1.0e-4       
+   # RMS del gradiente de energía: debe ser pequeño para indicar que estás en un minimo.
+   TolRMSG 1.0e-5   
+   # Gradiente maximo permitido para cualquier componente.    
+   TolMAXG 1.0e-4       
+end
+
+
+# GEOMETRIA INICIAL DE LA MOLECULA SELECCIONADA
+
+* xyz 0 1                # Carga total = 0, multiplicidad = 1 (singlete)
+O       0.000000   0.000000   0.11779
+H       0.000000   0.75545   -0.47116
+H       0.000000  -0.75545   -0.47116
+*

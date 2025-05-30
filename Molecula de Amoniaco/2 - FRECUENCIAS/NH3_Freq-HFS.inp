@@ -1,0 +1,29 @@
+! HFS def2-TZVPP Opt TightOpt VeryTightSCF
+
+! Freq
+! NumFreq
+
+%scf
+   MaxIter 400          # Máximo de iteraciones permitidas para el SCF
+end
+
+%geom
+   TolRMSD 1.0e-5
+   TolMAXD 1.0e-4
+   TolRMSG 1.0e-5
+   TolMAXG 1.0e-4
+end
+
+%pal
+   nprocs 1
+end
+
+
+%MaxCore 4000            # Memoria máxima por núcleo (en MB)
+
+* xyz 0 1
+N       0.00000000    0.00000000    0.11361500
+H       0.00000000    0.93799100   -0.26510100
+H      -0.81232400   -0.46899600   -0.26510100
+H       0.81232400   -0.46899600   -0.26510100
+*
